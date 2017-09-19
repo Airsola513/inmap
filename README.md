@@ -1,2 +1,2 @@
-# inmap
-Map visualization
+# iview-doc
+Doc of iView

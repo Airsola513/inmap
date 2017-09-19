@@ -1,10 +1,17 @@
+/**
+ * Created by aresn on 16/7/18.
+ */
+import Env from './env';
+
 let config = {
-    apiPath: null,
-    workerPath: null
+    env: Env,
+    filePath: 'https://file.iviewui.com/file/',
+    version: 26,
+    liveVersion: 1
+};
+
+if (config.env === 'development') {
+    config.filePath = 'http://127.0.0.1:9800/overview/'
 }
 
-if (typeof Window !== 'undefined' && window.TD && window.TD.config) {
-    Object.assign(config, window.TD.config);
-}
-
-module.exports = config;
+export default config;
