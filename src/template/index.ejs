@@ -11,6 +11,8 @@
     <div id="app"></div>
     <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[0] %>"></script>
     <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[1] %>"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=U3q69k0Dv0GCYNiiZeHPf7BS"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8000/work/inmap/dist/inmap.js"></script>
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -27,6 +29,9 @@
         ga('create', 'UA-83967883-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <script src="https://jic.talkingdata.com/app/h5/v1?appid=84D0993918504CE98F4EEDA3BF195366&vn=2&vc=2"></script>
+    <script src="https://jic.talkingdata.com/app/h5/v1?appid=84D0993918504CE98F4EEDA3BF195366&vn=2"></script>
+   <script>
+   inMap.workerMrg.create('http://127.0.0.1:8000/work/inmap/dist/worker.js');
+   </script>
 </body>
 </html>

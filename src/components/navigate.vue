@@ -3,11 +3,6 @@
 </style>
 <template>
     <div class="navigate">
-        <div class="ad" @click="handleAd">
-            <div class="ad-main">
-                <img src="../images/ad.png">
-            </div>
-        </div>
         <Menu width="auto" :active-name="activeKey" @on-select="handleSelect" v-if="type === 'guide'">
             <Menu-item v-for="item in navigate.guide" :key="item.path" :name="item.path">
                 <template v-if="lang === 'zh-CN'">{{ item.title }}</template>
@@ -27,10 +22,10 @@
                     </Badge>
                 </template>
             </Menu-item>
-            <Button type="primary" icon="social-usd" size="small" style="width:130px;margin:15px 0 15px 15px;" @click="handleDonate">{{ $t('index.donate') }}</Button>
+            <!-- <Button type="primary" icon="social-usd" size="small" style="width:130px;margin:15px 0 15px 15px;" @click="handleDonate">11{{ $t('index.donate') }}</Button> -->
             <div class="navigate-group">{{ $t('index.component') }}</div>
-            <Menu-group v-for="item in navigate.components" :key="item.type" :title="item.type">
-                <Menu-item v-for="component in item.list" :key="component.path" :name="component.path">
+            <Menu v-for="item in navigate.components" style="width:auto;"  @on-select="handleSelect">
+                <Menu-item v-for="component in item.list" @click="handleSelect(component.path)" :key="component.path" :name="component.path">
                     <i class="ivu-icon" :class="'ivu-icon-' + component.icon"></i>
                     <template v-if="lang === 'zh-CN'">
                         {{ component.title.split(' ')[0] }}
@@ -38,7 +33,7 @@
                     </template>
                     <template v-else>{{ component.title.split(' ')[0] }}</template>
                 </Menu-item>
-            </Menu-group>
+            </Menu>
         </Menu>
         <Menu width="auto" :active-name="activeKey" @on-select="handleSelect" v-if="type === 'practice'">
             <Menu-item v-for="item in navigate.practice" :key="item.path" :name="item.path">
@@ -85,6 +80,7 @@
             },
             handleSelect (path) {
                 if (this.lang === 'en-US') path += '-en';
+            // debugger
                 this.$nextTick(() => {
                     this.$router.push(path);
                 });

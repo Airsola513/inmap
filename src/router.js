@@ -16,9 +16,16 @@ const routers = [{
         component: (resolve) => require(['./views/guide/install.vue'], resolve)
     },
     {
-        path: '*',
-        redirect: '/docs/guide/introduce'
-    }
+        path: '/docs/guide/dotOverlay',
+        meta: {
+            title: '点的绘制'
+        },
+        component: (resolve) => require(['./views/guide/dotOverlay.vue'], resolve)
+    },
+    // {
+    //     path: '*',
+    //     redirect: '/docs/guide/introduce'
+    // }
 ];
 
 export default routers;

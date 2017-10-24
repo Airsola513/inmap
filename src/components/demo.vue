@@ -2,37 +2,45 @@
     @import '../styles/demo.less';
 </style>
 <template>
-    <Row class="example" :class="{'example-vertical': vertical}" :id="title">
-        <i-col class="example-demo" :span="vertical ? 24 : 12">
-            <div class="example-case">
-                <slot name="demo"></slot>
-            </div>
-            <header class="example-header">
-                <span>
-                    {{ title }}
-                    <a :href="`#${title}`">#</a>
-                </span>
-            </header>
-            <div class="example-desc">
-                <slot name="desc"></slot>
-            </div>
-        </i-col>
-        <div class="example-split"></div>
-        <i-col class="example-code" :style="codeHeight" :span="vertical ? 24 : 12">
-            <div :style="style"><slot name="code"></slot></div>
-            <div class="example-code-more" v-if="showMore" @click="showCode = !showCode">
-                <Icon type="ios-arrow-down" v-show="!showCode"></Icon>
-                <Icon type="ios-arrow-up" v-show="showCode"></Icon>
-                <i-button type="text" v-show="hideCode && !showCode">
-                    <template v-if="lang === 'zh-CN'">显示代码</template>
-                    <template v-else>Show Code</template>
-                </i-button>
-            </div>
-        </i-col>
-    </Row>
+    <div>
+
+        <slot name="header"></slot>
+
+        <Row class="example" :class="{'example-vertical': vertical}" :id="title">
+            <i-col class="example-demo" :span="vertical ? 24 : 12">
+                <header class="example-header">
+                    <span>
+                        {{ title }}
+                        <a :href="`#${title}`">#</a>
+                    </span>
+                </header>
+                <div class="example-desc">
+                    <slot name="desc"></slot>
+                </div>
+
+            </i-col>
+            <div class="example-split"></div>
+            <i-col class="example-code" :style="codeHeight" :span="vertical ? 24 : 12">
+                <div :style="style">
+                    <slot name="code"></slot>
+                </div>
+                <div class="example-code-more" v-if="showMore" @click="showCode = !showCode">
+                    <Icon type="ios-arrow-down" v-show="!showCode"></Icon>
+                    <Icon type="ios-arrow-up" v-show="showCode"></Icon>
+                    <i-button type="text" v-show="hideCode && !showCode">
+                        <template v-if="lang === 'zh-CN'">显示代码</template>
+                        <template v-else>Show Code</template>
+                    </i-button>
+                </div>
+            </i-col>
+
+        </Row>
+        <div class="example-case">
+            <slot name="demo"></slot>
+        </div>
+    </div>
 </template>
 <script>
-
     export default {
         props: {
             title: {
@@ -48,7 +56,7 @@
                 default: false
             }
         },
-        data () {
+        data() {
             return {
                 showCode: false,
                 showMore: true,
@@ -59,7 +67,7 @@
             }
         },
         computed: {
-            codeHeight () {
+            codeHeight() {
                 let style = {};
 
                 if (this.ready) {
@@ -72,7 +80,7 @@
 
                 return style;
             },
-            style () {
+            style() {
                 let style = {
                     opacity: 1
                 };
@@ -82,10 +90,11 @@
                 return style;
             }
         },
-        mounted () {
+        mounted() {
             this.$nextTick(() => {
-                const demo_height = this.$children[0].$children[0].$el.clientHeight;
-                const code_height = this.$children[0].$children[1].$el.clientHeight + 20;
+                const exampleDom=this.$el.querySelector('.example');
+                const demo_height = exampleDom.children[0].clientHeight;
+                const code_height = exampleDom.children[2].clientHeight + 20;
 
                 this.code_height = code_height;
 
