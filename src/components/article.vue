@@ -176,7 +176,7 @@
                 } else if (route.indexOf('live') > -1) {
                     this.activeKey = 'live';
                 }  else {
-                    this.activeKey = 'guide';
+                    this.activeKey = 'component';
                 }
             },
             handleNavMenuChange (val) {

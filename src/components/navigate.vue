@@ -22,9 +22,9 @@
                     </Badge>
                 </template>
             </Menu-item>
-            <!-- <Button type="primary" icon="social-usd" size="small" style="width:130px;margin:15px 0 15px 15px;" @click="handleDonate">11{{ $t('index.donate') }}</Button> -->
+
             <div class="navigate-group">{{ $t('index.component') }}</div>
-            <Menu v-for="item in navigate.components" style="width:auto;"  @on-select="handleSelect">
+            <Menu v-for="item in navigate.components" style="width:auto;" @on-select="handleSelect">
                 <Menu-item v-for="component in item.list" @click="handleSelect(component.path)" :key="component.path" :name="component.path">
                     <i class="ivu-icon" :class="'ivu-icon-' + component.icon"></i>
                     <template v-if="lang === 'zh-CN'">
@@ -35,21 +35,14 @@
                 </Menu-item>
             </Menu>
         </Menu>
-        <Menu width="auto" :active-name="activeKey" @on-select="handleSelect" v-if="type === 'practice'">
-            <Menu-item v-for="item in navigate.practice" :key="item.path" :name="item.path">
-                <template v-if="lang === 'zh-CN'">{{ item.title }}</template>
-                <template v-else>{{ item.titleEn }}</template>
-            </Menu-item>
-        </Menu>
-        <Menu width="auto" :active-name="activeKey" @on-select="handleSelect" v-if="type === 'live'">
-            <Menu-item v-for="item in navigate.live" :key="item.path" :name="item.path">
-                <template v-if="lang === 'zh-CN'">{{ item.title }}</template>
-                <template v-else>{{ item.titleEn }}</template>
-            </Menu-item>
-        </Menu>
+
         <Modal v-model="showAd" title="Recruiting Translation Volunteer">
             <div class="i-article">
-                <p style="font-size: 16px;">iView team are recruting volunteers to help us translate the document. If you master both Chinese and English, we are looking forward to your joining in our translation plan and help us improve iView. If you want to join in the translation plan, please send E-Mail to <a href="mailto:admin@aresn.com">admin@aresn.com</a></p>
+                <p style="font-size: 16px;">iView team are recruting volunteers to help us translate the document. If you master both Chinese and English,
+                    we are looking forward to your joining in our translation plan and help us improve iView. If you want
+                    to join in the translation plan, please send E-Mail to
+                    <a href="mailto:admin@aresn.com">admin@aresn.com</a>
+                </p>
             </div>
         </Modal>
     </div>
@@ -65,7 +58,7 @@
                 type: [String, Number]
             }
         },
-        data () {
+        data() {
             return {
                 navigate: navigate,
                 showDot: false,
@@ -75,28 +68,28 @@
             }
         },
         methods: {
-            handleDonate () {
+            handleDonate() {
                 bus.$emit('on-donate-show');
             },
-            handleSelect (path) {
+            handleSelect(path) {
                 if (this.lang === 'en-US') path += '-en';
-            // debugger
+                // debugger
                 this.$nextTick(() => {
                     this.$router.push(path);
                 });
             },
-            handleAd () {
-//                this.$router.push('/live');
-//                this.showAd = true;
+            handleAd() {
+                //                this.$router.push('/live');
+                //                this.showAd = true;
                 window.open('https://www.iviewui.com/vue-book');
             }
         },
-        created () {
+        created() {
             this.lang = this.$lang;
             const path = this.lang === 'zh-CN' ? this.$route.path : this.$route.path.split('-en')[0];
             this.activeKey = path;
         },
-        mounted () {
+        mounted() {
             // 判断是否已阅读更新日志
             const dotVersion = window.localStorage.getItem('version');
             if (dotVersion) {

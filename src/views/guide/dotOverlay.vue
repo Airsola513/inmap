@@ -81,22 +81,19 @@
             <Demo title="基础用法">
                 <div slot="header">
                     <Anchor title="示例2 DotOverlay" h2></Anchor>
-                    <p>智能等色平分颜色（在实际项目中，最让人头疼的就是如何设置颜色区间，主要原因是数据是时时更新的，导致数据的分布状态不确定，要采用实例二那种方式会出现问题。我们最好采用的动态计算等分颜色的算法）
-                        <br /> 下面展示的是把圆点分成7等份颜色的示例
+                    <p>inmap提供了自动分配颜色的功能（在实际项目中，最让人头疼的就是如何设置颜色区间，主要原因是数据是时时更新的，导致数据空间分布状态不确定，要采用实例二那种方式显然很不合适，人工设置区间颜色的成本很高）
+                        <br/> 下面展示的是把圆点分成7等份颜色的示例,主要是这是<code>color</code>属性，接收一个数组:颜色由冷色到暖色。
                     </p>
                 </div>
                 <div slot="desc">
-                    <p>基本使用方法，有四种样式可以选择
-                        <code>info</code>、
-                        <code>success</code>、
-                        <code>warning</code>、
-                        <code>error</code>。</p>
+                    <p>基本使用方法
+                        <code>colors</code>接收一个数组类型
+                        </P>
                 </div>
-                <i-code lang="html" slot="code">{{code.introduce.script}}</i-code>
+                <i-code lang="html" slot="code">{{code.introduce.demo4}}</i-code>
 
-                <div slot="demo" style="height:300px;position: relative;background-color: antiquewhite;">
-                  
-
+                <div slot="demo" style="height:500px;position: relative;background-color: antiquewhite;">
+                  <Demo5></Demo5>
                 </div>
             </Demo>
         </article>
@@ -112,6 +109,7 @@ import Demo1 from "./demo/dot-demo1.vue";
 import Demo2 from "./demo/dot-demo2.vue";
 import Demo3 from "./demo/dot-demo3.vue";
 import Demo4 from "./demo/dot-demo4.vue";
+import Demo5 from "./demo/dot-demo5.vue";
 // debugger
 export default {
   components: {
@@ -122,7 +120,8 @@ export default {
     Demo1,
     Demo2,
     Demo3,
-    Demo4
+    Demo4,
+    Demo5
   },
   data() {
     return {
