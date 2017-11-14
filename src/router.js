@@ -18,7 +18,7 @@ const routers = [{
     {
         path: '/docs/guide/dotOverlay',
         meta: {
-            title: '点的绘制'
+            title: '圆点的绘制'
         },
         component: (resolve) => require(['./views/guide/dotOverlay.vue'], resolve)
     },

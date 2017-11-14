@@ -20,25 +20,25 @@ const list = {
                 title: '地图',
                 path: '/docs/guide/dotOverlay',
                 img: 'grid.png',
-                icon: 'ios-grid-view-outline'
+                icon: 'map'
             },
             {
                 title: '圆点',
                 path: '/docs/guide/dotOverlay',
                 img: 'grid.png',
-                icon: 'ios-grid-view-outline'
+                icon: 'android-radio-button-off'
             },
             {
                 title: 'tooltip',
                 path: '/docs/guide/pop',
                 img: 'layout-new.png',
-                icon: 'ios-browsers-outline'
+                icon: 'ios-chatbubble-outline'
             },
             {
                 title: '图标',
                 path: '/docs/guide/imgOverlay',
                 img: 'layout-new.png',
-                icon: 'ios-browsers-outline'
+                icon: 'ios-location'
             },
             {
                 title: '围栏',
@@ -50,20 +50,20 @@ const list = {
                 title: '线路',
                 path: '/docs/guide/Circuit',
                 img: 'icon.png',
-                icon: 'ios-heart-outline'
+                icon: 'arrow-graph-up-right'
             },
             {
-                title: '格子聚合热力',
+                title: '聚合热力',
                 path: '/docs/guide/griddingOverlay',
                 img: 'icon.png',
-                icon: 'ios-heart-outline'
+                icon: 'fireball'
             },
             {
 
                 title: '热力图',
                 path: '/components/honeycombOverlay',
                 img: 'icon.png',
-                icon: 'ios-heart-outline'
+                icon: 'flame'
             }
         ]
     }],

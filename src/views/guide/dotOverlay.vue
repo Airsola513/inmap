@@ -1,7 +1,7 @@
 <template>
     <i-article>
         <article>
-            <h1>点的绘制</h1>
+            <h1>圆点的绘制</h1>
             <Anchor title="概述" h2></Anchor>
             <p>大数据圆点展示：可以设置背景颜色、大小、边框宽度、边框颜色、还有鼠标事件等</p>
             <Demo title="基础用法">
