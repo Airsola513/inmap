@@ -90,7 +90,7 @@
                         <code>colors</code>接收一个数组类型
                         </P>
                 </div>
-                <i-code lang="html" slot="code">{{code.introduce.demo4}}</i-code>
+                <i-code lang="html" slot="code">{{code.introduce.demo5}}</i-code>
 
                 <div slot="demo" style="height:500px;position: relative;background-color: antiquewhite;">
                   <Demo5></Demo5>
