@@ -16,6 +16,13 @@ const routers = [{
         component: (resolve) => require(['./views/guide/install.vue'], resolve)
     },
     {
+        path: '/docs/guide/map',
+        meta: {
+            title: '圆点的绘制'
+        },
+        component: (resolve) => require(['./views/guide/map.vue'], resolve)
+    },
+    {
         path: '/docs/guide/dotOverlay',
         meta: {
             title: '圆点的绘制'

@@ -18,7 +18,7 @@ const list = {
         list: [
             {
                 title: '地图',
-                path: '/docs/guide/dotOverlay',
+                path: '/docs/guide/map',
                 img: 'grid.png',
                 icon: 'map'
             },
