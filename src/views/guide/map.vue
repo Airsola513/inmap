@@ -10,7 +10,7 @@
                     <p>创建一个inMap实例，并设置地图中心点、主题和地图级别区间。 inMap对百度地图做了一层封装，可以用创建的后的inmap实例
                         <code>
                             inmap.map
-                        </code>访问。
+                        </code>访问,了解地图实例，<a href="http://lbsyun.baidu.com/index.php?title=jspopular">请访问该地址访问百度地图文档</a>
                     </p>
                 </div>
                 <div slot="desc">
@@ -25,10 +25,64 @@
                     <Demo1></Demo1>
                 </div>
             </Demo>
-
+            <div class="api" style="margin-top:10px">
+                <Anchor title="API" h2></Anchor>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>参数</th>
+                            <th>说明</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>html的id属性或dom对象</td>
+                            <td>String/DOM</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>skin</td>
+                            <td>设置皮肤,inmap内置两种皮肤，分布别是 Blueness、WhiteLover。</td>
+                            <td>String</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>center</td>
+                            <td>
+                                设置地图中心点：[经度、维度]
+                            </td>
+                            <td>Array</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>zoom</td>
+                            <td>设置地图的zoom工具条，参数如下：
+                                <br/>
+                                <ol > 
+                                    <li>vue：当前默认初始化的地图级别</li>
+                                    <li>show：ture/false 是否显示</li>
+                                    <li>max：最大地图级别</li>
+                                    <li>min：最小地图级别</li>
+                                </ol></td>
+                            <td>Object</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </div>
         </article>
     </i-article>
 </template>
+<style>
+.ivu-article ol li:not([class^=ivu-]) {
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+</style>
 <script>
     import iArticle from "../../components/article.vue";
     import Anchor from "../../components/anchor.vue";
